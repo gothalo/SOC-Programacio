@@ -4,3 +4,27 @@
 *.jar
 *.war
 *.ear
+*.xml
+*.properties
+*.mf
+*.jpg
+
+Ahorcado/build/
+Ahorcado/dist/
+Barcos/dist/
+Barcos/build/
+EntradaSalida/build/
+Exceptions/build/
+Exceptions/dist/
+ExempleClasses/build/
+ExempleClasses/dist/
+Herencia/dist/
+HolaMundo/dist/
+Matrices/build/
+Matrices/dist/
+Pilas y colas/build/
+Pilas y colas/dist/
+Usando String/build/
+Variables/build/
+Variables/dist/
+
