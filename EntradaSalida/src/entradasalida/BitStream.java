@@ -8,6 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.FileInputStream;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -107,15 +108,23 @@ public class BitStream {
         try {
             // creem i obrim els objectes que fan referencia als fitxers
             fitxerOrigen = new FileInputStream (origen);
-            fitxerDesti = new FileOutputStream (desti, true);
+            // el fitxer de destí, el sobreescriurem si ja existeix
+            fitxerDesti = new FileOutputStream (desti, false);
             
             // llegim el primer bit
             numBits = fitxerOrigen.read (bitData);
             
             while (numBits != -1) {
                 // copiem el que hem llegit
-                fitxerDesti.write (bitData);
-                
+                if (numBits == bitData.length) {
+                    fitxerDesti.write (bitData);
+                } else {
+                    // copiem a una nova matriu, els primers numBits elements
+                    // de la matriu bitData, que corresponen a la informació
+                    // llegida de l'arxiu original.
+                    byte [] resto = Arrays.copyOf(bitData, numBits);
+                    fitxerDesti.write (resto);              
+                }
                 // llegim seguent bit
                 numBits = fitxerOrigen.read (bitData);
             }

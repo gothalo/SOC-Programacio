@@ -20,13 +20,13 @@ public class EntradaSalida {
 //        
 //        bs.llegirFitxer();
         
-//        bs.duplicar ("foto.jpg", "copia.jpg");
+        bs.duplicar ("foto.jpg", "copia.jpg");
         
         TextStream ts = new TextStream ();
         
 //        ts.capturarTeclat();
 //        ts.llegirFitxer();
-        ts.escriureArxiu("tecles.dat");
-        ts.llegirArxiu ("tecles.dat");
+//        ts.escriureArxiu("tecles.dat");
+//        ts.llegirArxiu ("tecles.dat");
     }
 }
