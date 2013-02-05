@@ -161,7 +161,7 @@ public class Ahorcado {
         String letra;
         boolean encontrada;
         
-        palabraSecreta = obtenerPalabraSecreta();
+        palabraSecreta = obtenerPalabraSecretaVec();
         
         // contamos las letras sobre las que jugamos
         numeroLetras = palabraSecreta.length();
