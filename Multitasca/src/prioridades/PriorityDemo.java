@@ -17,15 +17,16 @@ public class PriorityDemo {
         Priority mt1 = new Priority("High Priority"); 
         Priority mt2 = new Priority("Low Priority"); 
 
-        // set the priorities 
-        mt1.setPriority(Thread.NORM_PRIORITY+2); 
-        mt2.setPriority(Thread.NORM_PRIORITY-2); 
+        // ajustamos las prioridades
+        mt1.setPriority(Thread.NORM_PRIORITY + 2); 
+        mt2.setPriority(Thread.NORM_PRIORITY - 2); 
 
-        // start the threads 
+        // inicializamos los hilos
         mt1.start(); 
         mt2.start(); 
 
         try { 
+            // esperar a que finalicen los diferentes hilos.
             mt1.join(); 
             mt2.join(); 
         } 
@@ -33,6 +34,7 @@ public class PriorityDemo {
             System.out.println("Main thread interrupted."); 
         } 
 
+        // mostramos el numero de ejecuciones
         System.out.println("\nHigh priority thread counted to " + mt1.count); 
         System.out.println("Low priority thread counted to " + mt2.count); 
         }
