@@ -20,22 +20,18 @@ public class SubeBaja implements Runnable {
         thr = new Thread (this);
     }
     
-    
-    private synchronized void opera () {
-        
-        if (nombre.equalsIgnoreCase ("SUBE")) {
-            valor = valor + 1;
-        } else {
-            valor = valor - 1;
-        }
-
-    }
-    
     @Override
     public void run () {
        
         for (int i = 0; i < 10000; i++) {
-            opera ();
+            
+            synchronized (this) {
+                if (nombre.equalsIgnoreCase ("SUBE")) {
+                    valor++;
+                } else {
+                    valor--;
+                }
+            }
         }
         
     }
