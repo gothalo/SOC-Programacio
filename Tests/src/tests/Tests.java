@@ -14,8 +14,14 @@ public class Tests {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        test.thread.IncDecMonitor idm = new test.thread.IncDecMonitor();
+//        test.thread.IncDecMonitor idm = new test.thread.IncDecMonitor();
+//        
+//        idm.process();
         
-        idm.process();
+        test.semaforo.SemaforoMain main = new test.semaforo.SemaforoMain();
+        
+        main.process();
+                
+                
     }
 }

@@ -26,7 +26,11 @@ public class Frames {
             
             @Override
             public void run () {
-                Layouts l = new Layouts();
+                //Layouts l = new Layouts();
+                
+                Ratoli r = new Ratoli ();
+                
+                r.show ();
             }
         });
         
